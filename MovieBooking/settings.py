@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'movies',
     'seats',
 
+    'rest_framework',
+
 ]
 
 AUTH_USER_MODEL = 'users.user'

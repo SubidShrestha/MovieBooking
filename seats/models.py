@@ -12,9 +12,9 @@ class seat(models.Model):
         return self.seat_code
 
 class bookedseat(models.Model):
-    seat=models.ForeignKey(seat,on_delete=models.CASCADE,null=True)
-    movie=models.ForeignKey(movie,on_delete=models.CASCADE,null=True)
-    customer=models.ForeignKey(user,on_delete=models.CASCADE,null=True)
+    seat=models.ForeignKey(seat,on_delete=models.CASCADE,null=True,related_name='book')
+    movie=models.ForeignKey(movie,on_delete=models.CASCADE,null=True,related_name='bookmovie')
+    customer=models.ForeignKey(user,on_delete=models.CASCADE,null=True,related_name='bookuser')
     movie_date=models.DateField(null=True)
     movie_time=models.TimeField(null=True)
     booked_date=models.DateField(auto_now_add=True)
